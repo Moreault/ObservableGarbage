@@ -1,21 +1,13 @@
 ![ObservableGarbage](https://github.com/Moreault/ObservableGarbage/blob/master/observablegarbage.png)
 # ObservableGarbage
-Adds an event to IDisposable that is triggered when the object is disposed.
-
-## Good to know
-This should be obvious but you can only use this interface on your own types. 
-
-## Why
-I implemented my own custom memory management system for Rough Trigger so that disposed objects could actually be eventually reclaimed and reused (I call this process "recycling.")
-
-It may or may not fit your needs but it exists regardless.
-
-## Getting started
+Adds an IObservableDisposable interface on top of IDisposable to help keep track of disposal status and trigger an event when an object is disposed.
 
 ```c#
 public class Example : IObservableDisposable
 {
     public bool IsDisposed { get; private set; }
+
+    public event DisposalEvent? OnDispose;
 
     private readonly SomeDisposableThingy _thingy;
 
@@ -36,16 +28,9 @@ public class Example : IObservableDisposable
             _thingy.Dispose();
         }
     }
-
-    public event DisposalEvent? OnDispose;
 }
 ```
 
-## You made a whole package for a single interface and an event handler? Are you insane?!
-ToolBX is a framework that comes in small chunks so that you can use what you like and leave out the rest. 
-
-For instance, I see no reason why you should have dependencies to the Grid collection if all you want to use is the IObservableDisposable interface.
-
-You can just copy and paste it for all I care. It's like four lines of code.
-
-However, it does also provide you with a uniformized way of observing your garbage together with other parts of the ToolBX framework that may also rely on IObservableDisposable.
+## Breaking changes
+2.X.X -> 3.0.0
+* `DisposalEvent` was renamed `DisposalEventHandler`
