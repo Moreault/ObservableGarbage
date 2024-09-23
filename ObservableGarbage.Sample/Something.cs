@@ -4,7 +4,7 @@ public class Something : IObservableDisposable
 {
     public bool IsDisposed { get; private set; }
 
-    public event DisposalEvent OnDispose;
+    public event DisposalEventHandler OnDispose;
 
     public void Dispose()
     {
