@@ -1,19 +1,20 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <OutputType>Exe</OutputType>
-    <TargetFramework>net7.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<TargetFramework>net8.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<IsPackable>false</IsPackable>
+	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="ToolBX.AssemblyInitializer.Console" Version="2.2.0" />
-		<PackageReference Include="ToolBX.MisterTerminal" Version="2.2.0" />
+		<PackageReference Include="ToolBX.AssemblyInitializer.Console" Version="3.0.0-beta2" />
+		<PackageReference Include="ToolBX.MisterTerminal" Version="3.0.0-beta1" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\ObservableGarbage\ObservableGarbage.csproj" />
+		<ProjectReference Include="..\ObservableGarbage\ObservableGarbage.csproj" />
 	</ItemGroup>
 
 </Project>
