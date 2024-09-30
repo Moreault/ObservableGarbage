@@ -10,7 +10,7 @@
 
 	<ItemGroup>
 		<PackageReference Include="ToolBX.AssemblyInitializer.Console" Version="3.0.0-beta2" />
-		<PackageReference Include="ToolBX.MisterTerminal" Version="3.0.0-beta1" />
+		<PackageReference Include="ToolBX.MisterTerminal" Version="3.0.0" />
 	</ItemGroup>
 
 	<ItemGroup>
