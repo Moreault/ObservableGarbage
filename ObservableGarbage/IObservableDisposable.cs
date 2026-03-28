@@ -3,5 +3,5 @@
 public interface IObservableDisposable : IDisposable
 {
     bool IsDisposed { get; }
-    event DisposalEventHandler OnDispose;
+    event DisposalEventHandler? OnDispose;
 }
