@@ -7,7 +7,7 @@ public class Example : IObservableDisposable
 {
     public bool IsDisposed { get; private set; }
 
-    public event DisposalEvent? OnDispose;
+    public event DisposalEventHandler? OnDispose;
 
     private readonly SomeDisposableThingy _thingy;
 
@@ -32,5 +32,8 @@ public class Example : IObservableDisposable
 ```
 
 ## Breaking changes
+3.X.X -> 4.0.0
+* `DisposalEventHandler` delegate sender parameter changed from `object` to `IObservableDisposable`
+
 2.X.X -> 3.0.0
 * `DisposalEvent` was renamed `DisposalEventHandler`
